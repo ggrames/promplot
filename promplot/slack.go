@@ -11,7 +11,7 @@ import (
 )
 
 // Slack posts a file to a Slack channel.
-func Slack(token, channel, title string, plot io.WriterTo) error {
+func Slack(token, channel, title string, text string, plot io.WriterTo) error {
 	api := slack.New(token)
 
 	if _, _, err := api.PostMessageContext(context.Background(), channel, slack.MsgOptionPostMessageParameters(
@@ -42,9 +42,10 @@ func Slack(token, channel, title string, plot io.WriterTo) error {
 	}
 
 	if _, err = api.UploadFile(slack.FileUploadParameters{
-		Title:    title,
-		File:     f.Name(),
-		Channels: []string{channel},
+		Title:          title,
+		InitialComment: text,
+		File:           f.Name(),
+		Channels:       []string{channel},
 	}); err != nil {
 		return fmt.Errorf("failed to upload file: %v", err)
 	}
