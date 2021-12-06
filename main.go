@@ -45,7 +45,7 @@ func main() {
 		queryTime   = flags.UnixTime("time", time.Now(), "Time for query (default is now). Format like the default format of the Unix date command.")
 		queryRange  = flags.Duration("range", 0, "Required. Time to look back to. Format: 5d12h34m56s")
 		title       = flag.String("title", "Prometheus metrics", "Optional. Title of graph.")
-		text        = flag.String("text", "Prometheus promplot graph", "Optional. Text of graph.")
+		text        = flag.String("text", "Prometheus promplotgg graph", "Optional. Text of graph.")
 		//
 		format = flag.String("format", "png", "Optional. Image format. For possible values see: https://godoc.org/github.com/gonum/plot/vg/draw#NewFormattedCanvas")
 	)

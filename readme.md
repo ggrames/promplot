@@ -47,6 +47,8 @@ But feel free to [add a new one](#development)!
             Time for query (default is now). Format like the default format of the Unix date command.
       -title string
             Optional. Title of graph. (default "Prometheus metrics")
+      -text string
+            Optional. Text of graph. (default "Prometheus promplotgg graph")
       -url string
             Required. URL of Prometheus server.
       -version
